@@ -40,12 +40,23 @@ Generate the dataset required for training:
 python generate_data.py
 ```
 
-### 2. Train the Model
-Train the CNN and generate evaluation metrics (including ROC curves):
+### 2. Training with Real Data (HAM10000)
+To train with the official HAM10000 dataset:
+1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000).
+2. Extract all images into the `data/images/` directory.
+3. Place `HAM10000_metadata.csv` into the `data/` directory.
+4. Run the training script:
 ```bash
 python train_model.py
 ```
-This produces `skin_disease_model.h5`, `class_names.json`, and `roc_curve.png`.
+The script will automatically detect the real data, apply class weighting to handle imbalance, and train the model.
+
+### 3. Training with Synthetic Data
+If you don't have the real dataset yet, you can generate synthetic images to test the pipeline:
+```bash
+python generate_data.py
+python train_model.py
+```
 
 ### 3. Run the Web App
 Launch the interactive dashboard:
