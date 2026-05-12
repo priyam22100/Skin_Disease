@@ -1,0 +1,12 @@
+data/images/
+__pycache__/
+*.h5
+*.ipynb
+training.log
+evaluation_report.txt
+ls_output.txt
+class_counts.txt
+eval_direct.txt
+streamlit_version.txt
+training_final.log
+roc_curve.png
