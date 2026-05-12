@@ -6,6 +6,14 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
 import tensorflow as tf
+
+# GPU Check
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+if len(tf.config.list_physical_devices('GPU')) > 0:
+    print("GPU is being used! 🚀")
+else:
+    print("GPU not found. Training will proceed on CPU. 🐢")
+
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization

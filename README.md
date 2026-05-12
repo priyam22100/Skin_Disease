@@ -64,6 +64,16 @@ Launch the interactive dashboard:
 streamlit run app.py
 ```
 
+## 🖥️ GPU Support (NVIDIA)
+To ensure your NVIDIA GPU is used for training:
+1. Install the appropriate NVIDIA drivers for your card.
+2. Install CUDA Toolkit and cuDNN.
+3. Use the following command to install the GPU-enabled version of TensorFlow (for version 2.16+ it's included in the main package):
+```bash
+pip install tensorflow[and-cuda]
+```
+The `train_model.py` script includes a check at the beginning to confirm if the GPU is detected.
+
 ## 📊 Evaluation
 - **Jupyter Notebook**: Open `skin_disease_prediction.ipynb` for a detailed walkthrough.
 - **ROC Curves**: View `roc_curve.png` or check the "Model Performance" tab in the web app.
